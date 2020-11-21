@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Lint
-      run: dotnet tool install --global dotnet-format && %UserProfile%/.dotnet/tools/dotnet-format --check --exclude *.Tests --verbosity quiet
+      run: dotnet tool install --global dotnet-format && dotnet-format --check --exclude *.Tests --verbosity quiet
     - name: Install
       run: dotnet restore
     - name: Build
@@ -30,7 +30,7 @@ jobs:
     - name: Unit Test
       run: dotnet test --filter Category!=Service --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover
     - name: Report
-      run: dotnet tool install --global dotnet-reportgenerator-globaltool && %UserProfile%/.dotnet/tools/reportgenerator \"-reports:**/*.Tests/coverage.opencover.xml\" \"-targetdir:coverage-reports\"
+      run: dotnet tool install --global dotnet-reportgenerator-globaltool && reportgenerator \"-reports:**/*.Tests/coverage.opencover.xml\" \"-targetdir:coverage-reports\"
     - name: Upload
       uses: actions/upload-artifact@v1
       with:
