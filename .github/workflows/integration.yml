@@ -26,7 +26,7 @@ jobs:
     - name: Install
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
     - name: Unit Test
       run: dotnet test --filter Category!=Service --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover
     - name: Report
