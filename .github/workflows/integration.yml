@@ -22,7 +22,9 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Lint
-      run: dotnet tool install --global dotnet-format && dotnet-format --check --exclude *.Tests --verbosity quiet
+      run: |
+        dotnet tool install --global dotnet-format
+        dotnet-format --check --exclude *.Tests --verbosity quiet
     - name: Restore
       run: nuget restore
     - name: Build
