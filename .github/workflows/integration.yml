@@ -23,8 +23,6 @@ jobs:
         dotnet-version: 3.1.101
     - name: Lint
       run: dotnet tool install --global dotnet-format && dotnet-format --check --exclude *.Tests --verbosity quiet
-    - name: Install
-      run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release
     - name: Unit Test
