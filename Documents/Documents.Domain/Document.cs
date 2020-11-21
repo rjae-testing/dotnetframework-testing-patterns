@@ -1,7 +1,7 @@
 ﻿using System;
 using Core.Domain;
 
-namespace Coverage.Domain
+namespace Documents.Domain
 {
     public class Document
     {

@@ -1,6 +1,6 @@
 ﻿using Core.Domain;
 
-namespace Coverage.Domain
+namespace Documents.Domain
 {
     public class DocumentRevision : Document
     {
