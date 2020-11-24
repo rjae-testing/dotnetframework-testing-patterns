@@ -6,4 +6,4 @@ dotnet test -warnaserror --filter Category!=Service; || exit 1
 git add --verbose .
 git commit -m "$1"
 git pull
-git push --verbose origin master
+git push --verbose
